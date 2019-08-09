@@ -1,12 +1,7 @@
 import random
-import datetime
-from datetime import date
-import sys
-import data
+import samples
 
-
-class DataMaker:
-
+class samplesMaker():
     def __init__(self):
         self.name = None
         self.first_name = None
@@ -62,7 +57,7 @@ class DataMaker:
         description = ""
         num_words = random.randint(12,25)
         for i in range(num_words):
-            word = random.choice(data.lorem)
+            word = random.choice(samples.lorem)
             if i == num_words - 1:
                 description += word + "."
                 break
@@ -73,22 +68,22 @@ class DataMaker:
 
 
     def get_first_name(self):
-        self.first_name = random.choice(data.first_name)
+        self.first_name = random.choice(samples.first_name)
         return self.first_name
 
     def get_last_name(self):
-        self.last_name = random.choice(data.first_name)
+        self.last_name = random.choice(samples.first_name)
         return self.last_name
 
 
     def get_occupation(self):
-        self.occupation = random.choice(data.occupations)
+        self.occupation = random.choice(samples.occupations)
         return self.occupation
 
 
     def get_state(self):
-        self.state = random.choice(data.states)
-        if self.state in data.states[-6:]:
+        self.state = random.choice(samples.states)
+        if self.state in samples.states[-6:]:
             self.country = "Canada"
         else:
             self.country = "United States"
@@ -97,7 +92,7 @@ class DataMaker:
 
     def get_country(self):
         if self.state == None:
-            self.country = random.choice(data.countries)
+            self.country = random.choice(samples.countries)
         elif self.state in states[-6:]:
             self.country = "Canada"
         else:
@@ -106,7 +101,7 @@ class DataMaker:
 
 if __name__ == "__main__":
     def main(*args):
-        a = DataMaker()
+        a = samplesMaker()
         a.get_info()
         print(a.info)
         return a
