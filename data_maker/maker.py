@@ -1,7 +1,14 @@
 import random
-import samples
+from data_maker import samples
 
-class samplesMaker():
+
+class Maker():
+    def __init__(self):
+
+
+
+
+class UserMaker():
     def __init__(self):
         self.name = None
         self.first_name = None
@@ -13,7 +20,7 @@ class samplesMaker():
         self.username = None
         self.age = None
         self.info = get_info(self)
-        
+
     def get_info(self):
         info = {"name": self.name, "first_name": self.first_name, "last_name": self.last_name, "occupation": self.occupation, "country": self.country, "state": self.state, "username": self.username, "age": self.age, "description": self.description}
         return info
@@ -100,8 +107,4 @@ class samplesMaker():
         return self.country
 
 if __name__ == "__main__":
-    def main(*args):
-        a = samplesMaker()
-        a.get_info()
-        print(a.info)
-        return a
+    pass
